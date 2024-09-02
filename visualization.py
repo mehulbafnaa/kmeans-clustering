@@ -1,10 +1,18 @@
-
 import matplotlib.pyplot as plt
 import numpy as np
 from typing import List
 from kmeans import Centroid, Cluster
 
 def plot_clusters(points: np.ndarray, clusters: List[Cluster], centroids: List[Centroid], title: str):
+    """
+    Visualize the clusters and centroids in a 2D scatter plot.
+
+    Args:
+        points (np.ndarray): The input data points.
+        clusters (List[Cluster]): Cluster assignments for each point.
+        centroids (List[Centroid]): List of centroid coordinates.
+        title (str): Title for the plot.
+    """
     plt.figure(figsize=(10, 7))
     unique_clusters = set(clusters)
     colors = plt.cm.viridis(np.linspace(0, 1, len(unique_clusters)))
@@ -20,6 +28,13 @@ def plot_clusters(points: np.ndarray, clusters: List[Cluster], centroids: List[C
     plt.show()
 
 def plot_elbow(k_values: List[int], inertias: List[float]):
+    """
+    Create an elbow plot to help determine the optimal number of clusters.
+
+    Args:
+        k_values (List[int]): List of k values tested.
+        inertias (List[float]): Corresponding inertia values for each k.
+    """
     plt.figure(figsize=(10, 7))
     plt.plot(k_values, inertias, marker='o')
     plt.xlabel('Number of clusters (k)')
