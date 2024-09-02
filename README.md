@@ -32,7 +32,7 @@ The project is organized into several Python modules:
 
 1. Clone this repository:
    ```
-   git clone https://github.com/your-username/kmeans-clustering.git
+   git clone https://github.com/mehulbafnaa/kmeans-clustering.git
    cd kmeans-clustering
    ```
 
